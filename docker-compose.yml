@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  eureka-server:
+    build:
+      context: ./eureka
+      dockerfile: Dockerfile
+    ports:
+      - "8761:8761"
+    networks:
+      - eureka-network
+
+  status-service:
+    build:
+      context: ./status
+      dockerfile: Dockerfile
+    ports:
+      - "8021:8021"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+    depends_on:
+      - eureka-server
+    networks:
+      - eureka-network
+
+networks:
+  eureka-network:
+    driver: bridge

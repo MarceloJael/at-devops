@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="webfluxR2DBC" />
+        <module name="veiculos" />
+        <module name="webcliente" />
+        <module name="eureka" />
+        <module name="status" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="integracao" target="17" />
+      <module name="loadbalance" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="eureka" options="-parameters" />
+      <module name="integracao" options="-parameters" />
+      <module name="loadbalance" options="-parameters" />
+      <module name="status" options="-parameters" />
+      <module name="veiculos" options="-parameters" />
+      <module name="webcliente" options="-parameters" />
+      <module name="webfluxR2DBC" options="-parameters" />
+    </option>
+  </component>
+</project>
